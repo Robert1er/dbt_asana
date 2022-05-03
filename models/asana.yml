@@ -327,6 +327,7 @@ models:
       - name: avg_days_open_assigned
         description: The average time that all tasks open on this day have spent open and assigned.
 
+
   - name: year_end_testing
     description: Dataset used for YET squad to manage individual tasks and generate compliance packages.
     columns:
@@ -364,10 +365,10 @@ models:
       - name: OTHER_PLAN
         description: From Questionnaire response - whether or not the company sponsors another plan
 
-      - name: 402_g_limit
+      - name: '"402_g_limit"'
         description: Employee failure of 402g limit for current year (and how it was resolved)
 
-      - name: 415_limit
+      - name: '"415_limit"'
         description: Employee failure of 415c limit for current year (and how it was resolved)
 
       - name: ACTIVE_ELIG_12_31_EOY_
