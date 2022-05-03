@@ -478,3 +478,167 @@ models:
 
       - name: first_assigned_At
         description: Timestamp of when the task was first assigned to someone
+
+
+  - name: restatements
+    description: Dataset used for Plan Docs to manage individual tasks and restatements project.
+    columns:
+
+      - name: task_id
+        description: System generated unique ID of the task.
+        tests:
+          - unique
+          - not_null
+
+      - name: task_name
+        description: User-facing name of the task (task number, plan id number, and plan name).
+
+      - name: task_number
+        description: The task number exctracted from task_name using the following [regexp_substr(task_name,'(C3 )+[0-9]*\.?[0-9]')]
+
+      - name: VW_PLAN_ID
+        description: Plan ID number on Vestwell Admin site
+
+      - name: address
+        description: TK
+
+      - name: company_affil_serv_grp
+        description: TK
+
+      - name: company_city
+        description: TK
+
+      - name: company_cont_grp
+        description: TK
+
+      - name: company_employer_id
+        description: TK
+
+      - name: company_name
+        description: TK
+
+      - name: company_phone
+        description: TK
+
+      - name: company_phone_ac
+        description: TK
+
+      - name: company_state
+        description: TK
+
+      - name: company_tax_year
+        description: TK
+
+      - name: company_zip
+        description: TK
+
+      - name: drafting_round
+        description: TK
+
+      - name: entity_type
+        description: TK
+
+      - name: issue_dual_eligibility
+        description: TK
+
+      - name: issue_excluded_employees
+        description: TK
+
+      - name: issue_fringe_benefit_exclusion
+        description: TK
+
+      - name: issue_missing_joinder_agreements
+        description: TK
+
+      - name: issue_plan_year_end
+        description: TK
+
+      - name: issue_pre_entry_comp_exclusion
+        description: TK
+
+      - name: issue_prior_year_testing
+        description: TK
+
+      - name: issue_write_in_comp_exclusion
+        description: TK
+
+      - name: joinder_list
+        description: TK
+
+      - name: plan_line_1
+        description: TK
+
+      - name: trustee_1
+        description: TK
+
+      - name: zendesk_case_link
+        description: TK
+
+      - name: conversation
+        description: The task's comments and authors aggregated into an ordered conversation, with authors + time sent
+
+      - name: number_of_comments
+        description: Count of comments made on the task
+
+      - name: tags
+        description: A list of the tags associated with the task.
+
+      - name: task_description
+        description: Free-form text describing the task, as seen in the UI.
+
+      - name: assignee_user_id
+        description: Foreign key referencing the ASANA_USER that is currently assigned the task.
+
+      - name: assignee_name
+        description: Name of the user that the task is currently assigned to.
+
+      - name: project_id
+        description: System-generated unique ID of the project.
+
+      - name: is_completed
+        description: Boolean that is true if the task is currently marked complete.
+
+      - name: completed_at
+        description: Timestamp of when the task was marked complete.
+
+      - name: completed_by_user_id
+        description: Foreign key referencing the USER who completed the task. Note that this may be different than the assignee
+
+      - name: created_at
+        description: Timestamp of when the task was created
+
+      - name: due_date
+        description: Date the task is due, if provided.
+
+      - name: first_modifier_name
+        description: Name of the user who made the first modification to the task
+
+      - name: modified_at
+        description: Timestamp of when the task was last modified
+
+      - name: TASK_MINS
+        description: The number of minutes to complete a task (NOT inclusive of waiting time).
+
+      - name: task_link
+        description: URL formatted to bring you directly to the task in asana.
+
+      - name: days_open
+        description: The number of days the task has been/was open (creation -> completion)
+
+      - name: is_currently_assigned
+        description: Boolean, true if the task is *currently* assigned
+
+      - name: has_been_assigned
+        description: Boolean, true if the task has at one point been assigned, even if currently not.
+
+      - name: days_since_last_assignment
+        description: The number of days the task has been/was open and assigned to to the most recent user (last assignment -> completion)
+
+      - name: days_since_first_assignment
+        description: The number of days the task has been/was open and assigned at all (first time assigned -> completion)
+
+      - name: last_assigned_at
+        description: Timestamp of when the task was last assigned (to the current user if still assigned)
+
+      - name: first_assigned_At
+        description: Timestamp of when the task was first assigned to someone

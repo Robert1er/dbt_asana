@@ -2,6 +2,7 @@ select
   task_id,
   task_name,
   regexp_substr(task_name,'(C3 )+[0-9]*\.?[0-9]') as task_number,
+  custom_vw_plan_id as vw_plan_id,
   custom_company_address_1 as address,
   custom_company_affil_serv_grp as company_affil_serv_grp,
   custom_company_city as company_city,
