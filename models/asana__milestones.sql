@@ -4,7 +4,7 @@ with projects as (
         project_id
 
     from {{ ref('stg_asana__project') }}
-    where team_id = '1170823813530401'
+    where team_id = '1170823813530401' --id for "Implementations Projects (Client)": https://app.asana.com/0/1170823813530401/overview
 ),
 
 tasks as (
@@ -173,7 +173,7 @@ select
     m3_inv.completed_at as m3_investments,
     m3_is_elig.completed_at as m3_is_final_elige_review,
     m3_rm_elig.completed_at as m3_rm_eligibility_review,
-    m3_rm_rem.completed_at as m3_remainder,
+    m3_rm_rem.completed_at as m3_reminder,
     m4.due_on as m4_due,
     m4.completed_at as m4_done,
     m4_send_data.completed_at as m4_sent,
